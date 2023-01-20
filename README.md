@@ -1,46 +1,27 @@
-# Getting Started with Create React App
+# CLASS를 활용하여 컴포넌트별 MODEL 활용방안
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Class-Enum 패키지를 활용하여 컴포넌트내 로직을 최소화가 가능하며 삼항연산자를 사용하지 않아도 됨. 기존에 OR연산자를 이용하기 위해서 컴포넌트를 추가 하는 방법보다 훨씬 깔끔하게 분리가 가능한 방법
+호돌맨님이 올리신 영상을 보고 좋다고 생각되서 한번 사용해보고 어떤식의 장점이있는지 활용해 보았다.
 
-## Available Scripts
 
-In the project directory, you can run:
+## 왜 HOOKS대신 CLASS를 사용하는가?
 
-### `npm start`
+물론 Hooks로도  활용이 가능하다 하지만 대부분 UI단에서 Hooks의 obj를 정의하는 방식이며 그렇게 될경우 UI단에 불필요한 로직이 증가하게되고 
+불필요한 로직의 증가는 유지보수의 어려움을 초래하게 된다. 간단한 변수와 함수가 같이있는 class가 오히려 한눈에 어떤역활을 하는지 파악하기 쉽기 이다. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+UI단 로직을 한번 보도록하자 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![img.png](img.png)
 
-### `npm test`
+CLASS로 나눌경우 이런식으로 onClick 이벤트를 정의할 수 있고.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![img_1.png](img_1.png)
 
-### `npm run build`
+변화하는 값은 무조건 getMessage로 바뀐 값이 나오기때문에 UI로직단에서 삼항연산자를 사용하지 않아도되며 CLASS를 참조하여 가져오기 떄문에
+같은 함수명을 사용 할 수 있다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+전체코드는 App.tsx를 참고하길바란다.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
